@@ -9,7 +9,13 @@
 import UIKit
 import shared
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MembersView {
+    
+    lazy var presenter: MembersPresenter = {
+        MembersPresenter(view: self, repository: AppDelegate.appDelegate.dataRepository)
+    }()
+    
+    var isUpdating = false
 
     @IBOutlet weak var txtGreeting: UILabel!
     
@@ -18,6 +24,18 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         txtGreeting.text = Greeting().greeting()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter.onCreate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        presenter.onDestroy()
+    }
+    
+    func onUpdate(members: String) {
+        print(members)
     }
 }
 
