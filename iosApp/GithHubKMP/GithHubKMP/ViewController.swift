@@ -11,6 +11,8 @@ import shared
 
 class ViewController: UIViewController, MembersView {
     
+    let memberList = MemberList()
+    
     lazy var presenter: MembersPresenter = {
         MembersPresenter(view: self, repository: AppDelegate.appDelegate.dataRepository)
     }()
@@ -18,12 +20,16 @@ class ViewController: UIViewController, MembersView {
     var isUpdating = false
 
     @IBOutlet weak var txtGreeting: UILabel!
+    @IBOutlet weak var membersTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         txtGreeting.text = Greeting().greeting()
+        
+        membersTableView.register(UINib(nibName: "MemberCellTableViewCell", bundle: nil),
+                                  forCellReuseIdentifier: "MemberCell")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,8 +40,39 @@ class ViewController: UIViewController, MembersView {
         presenter.onDestroy()
     }
     
-    func onUpdate(members: String) {
-        print(members)
+    func onUpdate(members: [Member]) {
+        self.memberList.updateMembers(newMembers: members)
+        self.membersTableView.reloadData()
     }
 }
 
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.memberList.members.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MemberCell",
+                                                 for: indexPath) as! MemberCellTableViewCell
+        let memberInfo = self.memberList.members[indexPath.row]
+        cell.txtMemberLogin.text = memberInfo.login
+        cell.imgMemberAvatar.load(url: URL(string: "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/raccoon_thumb.ngsversion.1485815402351.adapt.1900.1.JPG")!)
+        
+
+        return cell
+    }
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
+    }
+}

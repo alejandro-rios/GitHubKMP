@@ -5,7 +5,7 @@ import com.alejandrorios.api.UpdateProblem
 import com.alejandrorios.presentation.DataRepository
 
 class MembersDataRepository(private val api: GitHubAPI) : DataRepository {
-    override var members: String? = null
+    override var members: List<Member>? = null
 
     override var onRefreshListeners: List<() -> Unit> = emptyList()
 

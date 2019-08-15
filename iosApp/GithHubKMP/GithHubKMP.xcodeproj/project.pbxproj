@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D8CAEF522FBA1C5006ED036 /* MemberList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CAEF422FBA1C5006ED036 /* MemberList.swift */; };
+		8D8CAEF722FBA2A5006ED036 /* MemberCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8CAEF622FBA2A5006ED036 /* MemberCellTableViewCell.swift */; };
+		8D8CAEF922FBA308006ED036 /* MemberCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8CAEF822FBA308006ED036 /* MemberCellTableViewCell.xib */; };
 		8DA67B0822F1398000A58DF5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA67B0722F1398000A58DF5 /* BaseView.swift */; };
 		8DC9A78722E964910004E533 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC9A78622E964910004E533 /* AppDelegate.swift */; };
 		8DC9A78922E964910004E533 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DC9A78822E964910004E533 /* ViewController.swift */; };
@@ -32,6 +35,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8D8CAEF422FBA1C5006ED036 /* MemberList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberList.swift; sourceTree = "<group>"; };
+		8D8CAEF622FBA2A5006ED036 /* MemberCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCellTableViewCell.swift; sourceTree = "<group>"; };
+		8D8CAEF822FBA308006ED036 /* MemberCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberCellTableViewCell.xib; sourceTree = "<group>"; };
 		8DA67B0722F1398000A58DF5 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		8DC9A78322E964910004E533 /* GithHubKMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GithHubKMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DC9A78622E964910004E533 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,9 @@
 				8DC9A78F22E964930004E533 /* LaunchScreen.storyboard */,
 				8DC9A79222E964930004E533 /* Info.plist */,
 				8DA67B0722F1398000A58DF5 /* BaseView.swift */,
+				8D8CAEF422FBA1C5006ED036 /* MemberList.swift */,
+				8D8CAEF622FBA2A5006ED036 /* MemberCellTableViewCell.swift */,
+				8D8CAEF822FBA308006ED036 /* MemberCellTableViewCell.xib */,
 			);
 			path = GithHubKMP;
 			sourceTree = "<group>";
@@ -149,6 +158,7 @@
 				8DC9A79122E964930004E533 /* LaunchScreen.storyboard in Resources */,
 				8DC9A78E22E964930004E533 /* Assets.xcassets in Resources */,
 				8DC9A78C22E964910004E533 /* Main.storyboard in Resources */,
+				8D8CAEF922FBA308006ED036 /* MemberCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,7 +191,9 @@
 			files = (
 				8DA67B0822F1398000A58DF5 /* BaseView.swift in Sources */,
 				8DC9A78922E964910004E533 /* ViewController.swift in Sources */,
+				8D8CAEF722FBA2A5006ED036 /* MemberCellTableViewCell.swift in Sources */,
 				8DC9A78722E964910004E533 /* AppDelegate.swift in Sources */,
+				8D8CAEF522FBA1C5006ED036 /* MemberList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

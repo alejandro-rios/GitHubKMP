@@ -18,18 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-gc-FGp">
-                                <rect key="frame" x="20" y="426" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JP1-gc-FGp">
+                                <rect key="frame" x="16" y="858" width="382" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KNK-9e-BDm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="806"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="PaG-3J-b6b"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JP1-gc-FGp" secondAttribute="trailing" constant="16" id="F0y-eT-oXZ"/>
+                            <constraint firstItem="KNK-9e-BDm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="NFh-ms-FiT"/>
+                            <constraint firstItem="KNK-9e-BDm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Q4b-IO-6qU"/>
+                            <constraint firstItem="JP1-gc-FGp" firstAttribute="top" secondItem="KNK-9e-BDm" secondAttribute="bottom" constant="8" id="SSf-iR-elc"/>
+                            <constraint firstItem="JP1-gc-FGp" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="dgA-Pe-o6H"/>
+                            <constraint firstItem="KNK-9e-BDm" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qZX-dM-x8P"/>
+                            <constraint firstItem="JP1-gc-FGp" firstAttribute="top" secondItem="KNK-9e-BDm" secondAttribute="bottom" constant="8" id="s2T-sj-wrz"/>
+                            <constraint firstItem="JP1-gc-FGp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="tjF-tQ-O3P"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="membersTableView" destination="KNK-9e-BDm" id="FLM-gS-0sZ"/>
                         <outlet property="txtGreeting" destination="JP1-gc-FGp" id="Jek-vu-FTK"/>
                     </connections>
                 </viewController>
