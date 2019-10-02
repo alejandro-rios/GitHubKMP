@@ -56,8 +56,7 @@ extension ViewController: UITableViewDataSource {
                                                  for: indexPath) as! MemberCellTableViewCell
         let memberInfo = self.memberList.members[indexPath.row]
         cell.txtMemberLogin.text = memberInfo.login
-        cell.imgMemberAvatar.load(url: URL(string: "https://www.nationalgeographic.com/content/dam/animals/thumbs/rights-exempt/mammals/r/raccoon_thumb.ngsversion.1485815402351.adapt.1900.1.JPG")!)
-        
+        cell.imgMemberAvatar.load(url: URL(string: memberInfo.avatarUrl)!)
 
         return cell
     }
